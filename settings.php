@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-if ($ADMIN->fulltree) {
-   // TODO: Define the plugin settings page.
-   // https://docs.moodle.org/dev/Admin_settings
+if ($hassiteconfig) {
+    $ADMIN->add("localplugins", new admin_externalpage('local_configurable_api',
+        get_string('pluginname', 'local_configurable_api'), $CFG->wwwroot . "/local/configurable_api/configure_api_page.php"));
 }

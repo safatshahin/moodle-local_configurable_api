@@ -26,3 +26,42 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Configurable API';
+
+
+//form
+$string['name'] = 'Name';
+$string['maximum_character_255'] = 'Maximum 255 characters.';
+$string['configurablereportid'] = 'Select configurable report';
+$string['apisecret'] = 'Secret key for the API instance';
+$string['yes'] = 'Yes';
+$string['no'] = 'No';
+$string['encodejson'] = 'Encode json response';
+$string['apisecret_help'] = 'This secret will help to differentiate between the instances you create. 
+For example, all the instances will have the same token and endpoint, 
+but one wont be able access another by changing the id as each of them will have a unique secret for each of them.';
+
+//table
+$string['create_instance'] = 'Create configurable API instances';
+$string['id'] = 'ID';
+$string['status'] = 'Status';
+$string['samplerequest'] = 'Sample request';
+$string['timemodified'] = 'Time modified';
+$string['actions'] = 'Actions';
+$string['active'] = 'Active';
+$string['inactive'] = 'Inactive';
+$string['activate'] = 'Activate';
+$string['deactivate'] = 'Deactivate';
+$string['deactive'] = 'Deactive';
+$string['createnew'] = 'Create new';
+
+//notification
+$string['configure_api_saved'] = 'Configurable API successfully saved.';
+$string['configure_api_save_error'] = 'Error saving configurable API.';
+$string['configurable_api_deleted'] = 'Configurable api instance: {$a->name} is successfully deleted.';
+$string['configurable_api_delete_failed'] = 'Configurable api instance: {$a->name} had error while deleting, please check database record.';
+$string['delete_configurable_api'] = 'Delete configurable api instance';
+$string['delete_configurable_api_confirmation'] = 'Are you sure you want to delete configurable api instance: {$a->name} ?';
+$string['configurable_api_active'] = 'Configurable api: {$a->name} activated';
+$string['configurable_api_active_error'] = 'Error activating configurable api: {$a->name}';
+$string['configurable_api_deactive'] = 'Configurable api: {$a->name} deactivated';
+$string['configurable_api_deactive_error'] = 'Error deactivating configurable api: {$a->name}';
