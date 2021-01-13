@@ -26,6 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
-    $ADMIN->add("localplugins", new admin_externalpage('local_configurable_api',
+    $ADMIN->add("webservicesettings", new admin_externalpage('local_configurable_api',
         get_string('pluginname', 'local_configurable_api'), $CFG->wwwroot . "/local/configurable_api/configure_api_page.php"));
 }

@@ -96,7 +96,7 @@ class configure_api_table extends table_sql {
             $status = get_string('inactive', 'local_configurable_api');
             $css = 'danger';
         }
-        return '<div class = "text-' . $css . '"><i class = "fa fa-circle"></i>&nbsp;' . $status . '</div>';
+        return '<div class = "text-' . $css . '"><i class = "fa fa-circle"></i>' . $status . '</div>';
     }
 
     /**
@@ -105,7 +105,14 @@ class configure_api_table extends table_sql {
      * @throws moodle_exception
      */
     public function col_samplerequest($values) {
-        return 'will figure this out';
+        $configure_api_page = new configure_api_page($values->id);
+        $sample_request = 'https://site_url/'
+            .'<br>webservice/rest/server.php?'
+        .'<br>wstoken=token_created_for_this_service'
+        .'<br>&wsfunction=configurable_api_data'
+        .'<br>&configurable_api_id='.$values->id
+        .'<br>&configurable_api_secret='.$configure_api_page->apisecret;
+        return '<div>'.$sample_request.'</div>';
     }
 
     /**
