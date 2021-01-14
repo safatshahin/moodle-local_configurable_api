@@ -44,9 +44,8 @@ $editoroptions = array(
     'subdirs' => 0,
     'noclean' => true,
     'context' => $context,
-    'removeorphaneddrafts' => true
+    'removeorphaneddrafts' => true,
 );
-$data = file_prepare_standard_editor($data, 'html', $editoroptions, $context, 'local_configurable_api', null, $id);
 
 $title = get_string("create_instance", 'local_configurable_api');
 $PAGE->set_url('/local/configurable_api/configure_api_form_page.php');

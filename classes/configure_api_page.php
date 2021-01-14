@@ -34,7 +34,6 @@ class configure_api_page {
     public $name = null;
     public $configurablereportid = 0;
     public $apisecret = null;
-    public $encodejson = 0;
     public $active = 0;
     public $usermodified = 0;
 
@@ -61,7 +60,6 @@ class configure_api_page {
             $this->name = $configure_api_page->name;
             $this->configurablereportid = $configure_api_page->configurablereportid;
             $this->apisecret = $configure_api_page->apisecret;
-            $this->encodejson = $configure_api_page->encodejson;
             $this->active = $configure_api_page->active;
             $this->usermodified = (int)$USER->id;
         }

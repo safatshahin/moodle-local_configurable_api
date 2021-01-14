@@ -54,16 +54,11 @@ class configure_api_form extends moodleform {
         $mform->addRule('configurablereportid', get_string('required'), 'required', null, 'client');
         $mform->setDefault('configurablereportid', 0);
 
-        $mform->addElement('password', 'apisecret', get_string('apisecret','local_configurable_api'));
+        $mform->addElement('text', 'apisecret', get_string('apisecret','local_configurable_api'));
         $mform->addHelpButton('apisecret', 'apisecret', 'local_configurable_api');
+        $mform->addRule('apisecret', get_string('required'), 'required', null, 'client');
         $mform->addRule('apisecret',get_string('maximum_character_255', 'local_configurable_api'), 'maxlength', 255, 'client');
         $mform->setType('apisecret', PARAM_TEXT);
-
-        $encodejson = array();
-        $encodejson[] = $mform->createElement('radio', 'encodejson', '', get_string('no', 'local_configurable_api'), 0);
-        $encodejson[] = $mform->createElement('radio', 'encodejson', '', get_string('yes','local_configurable_api'), 1);
-        $mform->addGroup($encodejson, 'encodejsongr', get_string('encodejson', 'local_configurable_api'), array(' '), false);
-        $mform->setDefault('encodejson', 0);
 
         $mform->addElement('hidden', 'active');
         $mform->setType('active', PARAM_INT);

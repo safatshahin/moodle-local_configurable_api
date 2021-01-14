@@ -15,17 +15,33 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Privacy Subsystem implementation for local_configurable_api.
  *
  * @package     local_configurable_api
+ * @category    admin
  * @copyright   2021 Safat Shahin <safatshahin@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_configurable_api\privacy;
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_configurable_api';
-$plugin->release = '1.0.0';
-$plugin->version = 2021011400;
-$plugin->requires = 2017111300;
-$plugin->maturity = MATURITY_STABLE;
+/**
+ * Privacy Subsystem for local_configurable_api implementing null_provider.
+ *
+ * @copyright   2021 Safat Shahin <safatshahin@gmail.com>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}

@@ -15,17 +15,32 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Plugin webservices are defined here.
  *
  * @package     local_configurable_api
+ * @category    admin
  * @copyright   2021 Safat Shahin <safatshahin@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+$functions = array(
+    'configurable_api_data' => array(
+        'classname'   => 'local_configurable_api\webservice\configurable_api_data',
+        'methodname'  => 'configurable_api_data',
+        'classpath'   => 'local/configurable_api/classes/webservice/configurable_api_data.php',
+        'description' => 'Get configurable api data',
+        'type'        => 'read',
+        'ajax'        => true
+    )
+);
 
-$plugin->component = 'local_configurable_api';
-$plugin->release = '1.0.0';
-$plugin->version = 2021011400;
-$plugin->requires = 2017111300;
-$plugin->maturity = MATURITY_STABLE;
+// We define the services to install as pre-build services. A pre-build service is not editable by administrator.
+$services = array(
+    'local_configurable_api' => array(
+        'functions' => array(
+            'configurable_api_data'
+        ),
+        'restrictedusers' => 0,
+        'enabled' => 1
+    )
+);

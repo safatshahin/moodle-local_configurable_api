@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Configurable API';
-
+$string['privacy:metadata'] = 'The Configurable API allows to get the data of configurable reports via an API.';
 
 //form
 $string['name'] = 'Name';
@@ -35,7 +35,6 @@ $string['configurablereportid'] = 'Select configurable report';
 $string['apisecret'] = 'Secret key for the API instance';
 $string['yes'] = 'Yes';
 $string['no'] = 'No';
-$string['encodejson'] = 'Encode json response';
 $string['apisecret_help'] = 'This secret will help to differentiate between the instances you create. 
 For example, all the instances will have the same token and endpoint, 
 but one wont be able access another by changing the id as each of them will have a unique secret for each of them.';
