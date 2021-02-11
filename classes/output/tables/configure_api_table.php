@@ -62,8 +62,7 @@ class configure_api_table extends table_sql {
         name,
         active,
         '' AS samplerequest,
-        FROM_UNIXTIME(timemodified, '%d/%m/%Y %H:%i:%s') AS timemodified,
-        timemodified as timemodified_raw,
+        timemodified,
         '' AS actions";
         $from = "{local_configurable_api}";
         $where = 'id > 0';
@@ -121,7 +120,13 @@ class configure_api_table extends table_sql {
      * @return string
      */
     public function col_timemodified($values) {
-        return !empty($values->timemodified_raw) ? $values->timemodified : '-';
+        if (!empty($values->timemodified)) {
+            $dt = new DateTime("@$values->timemodified");  // convert UNIX timestamp to PHP DateTime
+            $result = $dt->format('d/m/Y H:i:s'); // output = 2017-01-01 00:00:00
+        } else {
+            $result = '-';
+        }
+        return $result;
     }
 
     /**

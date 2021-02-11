@@ -26,6 +26,9 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_configurable_api';
 $plugin->release = '1.0.0';
-$plugin->version = 2021011400;
+$plugin->version = 2021021100;
 $plugin->requires = 2017111300;
 $plugin->maturity = MATURITY_STABLE;
+$plugin->dependencies = array(
+        'block_configurable_reports' => ANY_VERSION
+);

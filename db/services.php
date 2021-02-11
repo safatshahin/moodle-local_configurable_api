@@ -25,9 +25,9 @@
 
 $functions = array(
     'configurable_api_data' => array(
-        'classname'   => 'local_configurable_api\webservice\configurable_api_data',
+        'classname'   => 'local_configurable_api\external\configurable_api_data',
         'methodname'  => 'configurable_api_data',
-        'classpath'   => 'local/configurable_api/classes/webservice/configurable_api_data.php',
+        'classpath'   => 'local/configurable_api/classes/external/configurable_api_data.php',
         'description' => 'Get configurable api data',
         'type'        => 'read',
         'ajax'        => true
